@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/ONPointInsights-React/static/css/main.abd64e84.css",
+    "main.js": "/ONPointInsights-React/static/js/main.0af1e893.js",
+    "static/js/787.afa3f59b.chunk.js": "/ONPointInsights-React/static/js/787.afa3f59b.chunk.js",
+    "static/media/spinner.gif": "/ONPointInsights-React/static/media/spinner.dd59193c5946d31baa92.gif",
+    "index.html": "/ONPointInsights-React/index.html",
+    "main.abd64e84.css.map": "/ONPointInsights-React/static/css/main.abd64e84.css.map",
+    "main.0af1e893.js.map": "/ONPointInsights-React/static/js/main.0af1e893.js.map",
+    "787.afa3f59b.chunk.js.map": "/ONPointInsights-React/static/js/787.afa3f59b.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.abd64e84.css",
+    "static/js/main.0af1e893.js"
+  ]
+}
