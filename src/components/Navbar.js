@@ -37,6 +37,7 @@ export default class Navbar extends Component {
   toggleCategory = (event)=>{
     // console.log(event.target.textContent.trim())
     this.setState({category: event.target.textContent.trim()})
+    this.props.toggleAbout(false);
     setTimeout(()=>{
         this.setState({btnDisable:true})
         this.props.toggleCategory(this.state.category)
@@ -48,6 +49,7 @@ export default class Navbar extends Component {
   toggleCountry = (event)=>{
     // console.log(event.target.textContent)
     let newCountry = event.target.textContent.trim()
+    this.props.toggleAbout(false);
     this.setState({country:newCountry})
       setTimeout(()=>{
         this.setState({btnDisable:true})
@@ -64,6 +66,7 @@ export default class Navbar extends Component {
   }
   toggleQuery = (event)=>{
     console.log(this.state.queryText)
+    this.props.toggleAbout(false);
     if(this.state.queryText===""){
       
     }else{
@@ -89,6 +92,15 @@ export default class Navbar extends Component {
       this.setState({searchDisabled:true }); 
     }
   };
+  handleHome = (e) => {
+    e.preventDefault();
+    this.props.toggleAbout(false);
+  }
+  handleAbout = (e)=>{
+    e.preventDefault();
+    this.props.toggleAbout(true)
+  }
+
 
   render() {
     return (
@@ -100,11 +112,11 @@ export default class Navbar extends Component {
           </button>
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-              <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="/">Home</a>
+            <li className="nav-item">
+                <a className="nav-link" href="/" onClick={this.handleHome}>Home</a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="/about">About</a>
+                <a className="nav-link" href="/" onClick={this.handleAbout}>About</a>
               </li>
             </ul>
             {/* <div className="dropdown">

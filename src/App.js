@@ -2,6 +2,7 @@ import './App.css';
 import React, { Component } from 'react'
 import Navbar from './components/Navbar';
 import News from './components/News';
+import AboutPage from './components/About';
 
 export default class App extends Component {
   constructor() {
@@ -12,7 +13,8 @@ export default class App extends Component {
       country:"in",
       btnDisable:false,
       key:0,
-      query:false
+      query:false,
+      aboutPage:false
     }
   }
   // handleFilter = (filter) => {
@@ -52,17 +54,22 @@ export default class App extends Component {
       console.log("query=" + this.state.query);
     });
   }
+  handleAboutPage = (result)=>{
+    this.setState({aboutPage:result});
+    // console.log(this.state.aboutPage);
+  }
   render() {
     return (
       <div>
-        <Navbar toggleFilter={this.handleFilter} toggleCategory = {this.handleCategory} toggleCountry = {this.handleCountry} toggleQuery={this.handleQuery}/>
-        <News key={this.state.key}
+        <Navbar toggleFilter={this.handleFilter} toggleCategory = {this.handleCategory} toggleCountry = {this.handleCountry} toggleQuery={this.handleQuery} toggleAbout={this.handleAboutPage}/>
+        {!this.state.aboutPage && <News key={this.state.key}
               pageSize={15} 
               country={this.state.country} 
               apiKey={"00c5917e46e84b66b98b0ab82260348d"} 
               // headlineType={this.state.filter}
               category={this.state.category} 
-              customQuery={this.state.query}/>
+              customQuery={this.state.query}/> }
+        {this.state.aboutPage && <AboutPage/>}
       </div>
     )
   }
